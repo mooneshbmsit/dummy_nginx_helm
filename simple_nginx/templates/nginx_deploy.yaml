@@ -3,6 +3,8 @@ kind: Pod
 metadata:
   labels:
     run: nginx
-  name: nginx
+  name: {{ .Values.deploy.name }}
 spec:
-  containers:
+  containers: 
+  - image: {{ .Values.deploy.name }}
+    name: {{ .Values.deploy.name }}
