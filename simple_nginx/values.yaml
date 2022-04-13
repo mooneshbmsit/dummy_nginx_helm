@@ -1,0 +1,9 @@
+deploy:
+  name: demo-nginx
+  image: nginx
+
+service:
+  name: demo-nginx-svc
+  port: 80
+  protocol: TCP
+  type: ClusterIP
