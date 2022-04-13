@@ -3,13 +3,13 @@ kind: Service
 metadata:
   labels:
     app: demo-nginx
-  name: demo-nginx
+  name: {{ .Value.service.name }} 
 spec:
   ports:
   - name: "80"
-    port: 80
-    protocol: TCP
+    port: {{ .Value.service.port }}
+    protocol: {{ .Value.service.protocol }}
     targetPort: 80
   selector:
-    app: demo-nginx
-  type: ClusterIP
+    app: {{ .Values.deploy.name }}
+  type: {{ .Value.service.type }}
